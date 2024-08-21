@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Akashk IT - Sign Up</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Fallback for old browsers */
+        body {
+            background: #fccb90;
+        }
+        /* Chrome 10-25, Safari 5.1-6 */
+        body {
+            background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+        }
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        body {
+            background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+        }
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            body {
+                background: linear-gradient(to right, #d8363a, #dd3675, #b44593);
+            }
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .gradient-custom-2 {
+            background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+            color: white;
+        }
+        .logo {
+            max-width: 200px;
+            margin: 20px auto;
+        }
+        /* Additional styling */
+        .pink-divider {
+            background-color: pink;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-outline {
+            margin-bottom: 15px;
+        }
+        .form-outline input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Logo Section -->
+            <div class="col-md-12 text-center">
+                <img src="/images/banner (1).jpeg" alt="Brand Logo" width="140" height="140" class="d-inline-block align-top">
+            </div>
+        </div>
+
+        <!-- Success and Error Messages -->
+        <p th:text="${succMsg}" class="text-success"></p>
+        <p th:text="${errMsg}" class="text-danger"></p>
+
+        <!-- Sign Up Form -->
+        <form th:action="@{/signup}" th:object="${user}" method="POST">
+            <div class="row">
+                <!-- Sign Up Form Section -->
+                <div class="col-md-6">
+                    <p class="text-center">Please create an account here</p>
+                    <div class="form-outline mb-3">
+                        <input type="text" id="name" th:field="*{name}" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-outline mb-3">
+                        <input type="email" id="email" th:field="*{email}" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-outline mb-3">
+                        <input type="tel" id="phno" th:field="*{phno}" class="form-control" placeholder="Phone">
+                    </div>
+                    <div class="text-center pt-1 mb-5">
+                        <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2">SIGN UP</button>
+                    </div>
+                    <div class="text-center">
+                        <p>Do you have an account? <a href="/login">LOGIN HERE</a></p>
+                    </div>
+                </div>
+                <!-- Punch Lines Section -->
+                <div class="col-md-6">
+                    <div class="pink-divider">
+                        <h2 style="font-size: 24px;">Akash IT is more than just a Software Training Institute</h2>
+                        <p style="font-size: 18px;">Student Satisfaction is at most important for us</p>
+                        <!-- Logo -->
+                        <img src="/images/banner2.jpg" alt="Akash IT Logo" class="logo">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

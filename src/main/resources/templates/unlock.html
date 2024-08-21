@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Ashok IT- Unlock Account</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+/* Fallback for old browsers */
+body {
+	background: #fccb90;
+}
+/* Chrome 10-25, Safari 5.1-6 */
+body {
+	background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+body {
+	background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+/* Media query for smaller screens */
+@media ( max-width : 768px) {
+	body {
+		background: linear-gradient(to right, #d8363a, #dd3675, #b44593);
+	}
+}
+
+.container {
+	max-width: 900px;
+	margin: 50px auto;
+	background: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-custom-2 {
+	background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+	color: white;
+}
+
+.logo {
+	max-width: 200px;
+	margin: 20px auto;
+}
+/* Additional styling */
+.pink-divider {
+	background-color: pink;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	margin-top: 20px;
+}
+</style>
+</head>
+<body>
+	<!-- Main Content -->
+	<div class="container">
+		<div class="row">
+			<!-- Logo Section -->
+			<div class="col-md-12 text-center">
+				<img src="\images\banner (1).jpeg" alt="Brand Logo" width="140"
+					height="140" class="d-inline-block align-top">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<p class="text-center" style="font-size: 20px;">
+					<strong>Unlock your account here</strong>
+				</p>
+
+				<p th:if="${errMsg != null}" class="text-danger"
+					style="font-weight: 600;" th:text="${errMsg}"></p>
+
+				<p th:if="${succMsg != null}" class="text-success"
+					style="font-weight: 600;" th:text="${succMsg}"></p>
+
+
+
+				<form th:action="@{/unlock}" th:object="${unlock}" method="POST">
+
+					<p class="text-center" th:text="'Your email : ' + ${unlock.email}"
+						style="font-weight: 600;"></p>
+
+
+					<input type="hidden" th:field="*{email}" />
+
+
+					<div class="form-outline mb-3">
+						<input type="password" id="temp-password" class="form-control"
+							th:field="*{tempPwd}" placeholder="Temporary Password" required>
+					</div>
+
+					<div class="form-outline mb-3">
+						<input type="password" id="new-password" class="form-control"
+							th:field="*{newPwd}" placeholder="New Password" required>
+					</div>
+
+					<div class="form-outline mb-3">
+						<input type="password" id="confirm-password" class="form-control"
+							th:field="*{confirmPwd}" placeholder="Confirm Password" required>
+					</div>
+
+					<div class="text-center pt-1 mb-5">
+						<input type="submit" value="Unlock"
+							class="btn btn-primary btn-block fa-lg gradient-custom-2"
+							style="font-size: 16px; font-weight: bold;">
+					</div>
+				</form>
+
+				<div class="text-center">
+					<p>
+						Already Unlocked? <a th:href="@{/login}">LOGIN HERE</a>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="pink-divider">
+					<h2 style="font-size: 24px;">Akash IT is more than just a
+						Software Training Institute</h2>
+					<p style="font-size: 18px;">Student Satisfaction is of utmost
+						importance to us</p>
+					<img src="/images/banner2.jpg" alt="Akash IT Logo" class="logo">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

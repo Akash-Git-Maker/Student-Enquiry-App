@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Ashok IT- Sign Up</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+/* Fallback for old browsers */
+body {
+	background: #fccb90;
+}
+/* Chrome 10-25, Safari 5.1-6 */
+body {
+	background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+body {
+	background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+/* Media query for smaller screens */
+@media ( max-width : 768px) {
+	body {
+		background: linear-gradient(to right, #d8363a, #dd3675, #b44593);
+	}
+}
+
+.container {
+	max-width: 900px;
+	margin: 50px auto;
+	background: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-custom-2 {
+	background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+	color: white;
+}
+
+.logo {
+	max-width: 300px;
+	margin: 20px auto;
+}
+/* Additional styling */
+.pink-divider {
+	background-color: pink;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	margin-top: 20px;
+}
+</style>
+</head>
+<body>
+	<!-- Main Content -->
+	<div class="container">
+		<header class="mb-4">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="#"> <img
+					src="\images\banner (1).jpeg" alt="Brand Logo" width="200"
+					height="200" class="d-inline-block align-top logo">
+				</a>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active"><a class="nav-link" href="#">Home</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="enquiry">Add
+								Enquiry</a></li>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="enquiries">View
+								Enquiries</a></li>
+					</ul>
+					<a href="logout" class="btn btn-danger">Logout</a>
+				</div>
+			</nav>
+		</header>
+		<div class="row">
+			<!-- Text Section -->
+			<div class="col-md-6">
+				<div class="pink-divider">
+					<h2 style="font-size: 24px; font-weight: bold;">Your
+						Performance</h2>
+					<p style="color: black; font-weight: bold; font-size: 20px;">
+						Total Enquiries: <span th:text="${dashboardData.totalEnquriesCnt}"></span>
+					</p>
+
+					<p style="color: green; font-weight: bold; font-size: 20px;">
+						Enrolled: <span th:text="${dashboardData.enrolledCnt}"></span>
+					</p>
+
+					<p style="color: red; font-weight: bold; font-size: 20px;">
+						Lost: <span th:text="${dashboardData.lostCnt}"></span>
+					</p>
+
+				</div>
+			</div>
+			<!-- Lady Image Section -->
+			<div class="col-md-6 text-center">
+				<img src="\images\lady.jpg" alt="Lady Image" width="300"
+					height="300" class="d-inline-block align-top">
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

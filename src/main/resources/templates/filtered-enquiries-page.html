@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+
+
+
+	<div id="filterResultTbl"></div>
+	<div class="container mt-2">
+		<table class="table" id="enqTbl">
+			<thead>
+				<tr>
+					<th>SL.No</th>
+					<th>Name</th>
+					<th>Course</th>
+					<th>Class Mode</th>
+					<th>Number</th>
+					<th>Number</th>
+					<th>Status</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="enquiry, iterStat : ${enquiries}">
+					<td th:text="${iterStat.index + 1}"></td>
+					<td th:text="${enquiry.studentName}"></td>
+					<td th:text="${enquiry.courseName}"></td>
+					<td th:text="${enquiry.studentPhno}"></td>
+					<td th:text="${enquiry.classMode}"></td>
+					<td th:text="${enquiry.studentPhno}"></td>
+					<td th:text="${enquiry.enqStatus}"></td>
+
+
+					<td>
+						<button class="btn-edit">
+							<a th:href="@{/enquiry(enquiryId=${enquiry.enquiryId})}">Edit</a>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

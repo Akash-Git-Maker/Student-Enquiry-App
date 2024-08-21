@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Akash IT Course</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .navbar-brand img {
+            width: 120px; /* Adjust the width of the logo */
+            height: auto; /* Maintain the aspect ratio */
+        }
+        .carousel-item img {
+            max-width: 100%; /* Adjust the max width of carousel images */
+            height: auto; /* Maintain the aspect ratio */
+        }
+        .carousel-indicators {
+            display: none; /* Hide carousel indicators */
+        }
+        .carousel-inner {
+            width: 50%; /* Set the carousel width to occupy half of the page */
+            margin: auto; /* Center the carousel */
+        }
+        .course-image {
+            width: 100%; /* Make the image take full width of its parent */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 350px; /* Set a max-width to control the size */
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: blue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/" style="margin-left: 50px;"> <!-- Adjust margin as needed -->
+            <img src="/images/banner%20(1).jpeg" alt="Banner Image" style="width: 120px;"> <!-- Adjust width as needed -->
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       aria-current="page" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+
+            </ul>
+
+            <a href="login" class="btn btn-danger">Login</a>
+        </div>
+    </div>
+</nav>
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="images/job1.jpg" class="d-block w-100" alt="..." style="width: 2500px; height: 200px;">
+        </div>
+
+        <div class="carousel-item">
+            <img src="images/job2.jpg" class="d-block w-100" alt="..." style="width: 2500px; height: 200px;">
+        </div>
+
+        <div class="carousel-item">
+            <img src="images/job3.jpg" class="d-block w-100" alt="..." style="width: 2500px; height: 200px;">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<h2 class="text-center">Trending Courses</h2>
+
+<div class="row text-center">
+    <div class="col-md-4" style="display: inline-block; margin: 0;">
+        <img alt="Course 1" src="images/course1.jpg" class="course-image">
+    </div>
+    <div class="col-md-4" style="display: inline-block; margin: 0;">
+        <img alt="Course 2" src="images/course2.jpg" class="course-image">
+    </div>
+    <div class="col-md-4" style="display: inline-block; margin: 0;">
+        <img alt="Course 3" src="images/course3.jpg" class="course-image">
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+<footer style="padding: 20px; text-align: center;">
+    <div style="background-color: #ffe6cc; display: inline-block; padding: 10px;">
+        <p style="color: blue; font-family: Arial, sans-serif; font-size: 16px; margin: 0;">
+            &copy; <span id="currentYear"></span> Copyright:
+            <span style="font-weight: bold;">@ Ashok IT</span>
+        </p>
+    </div>
+</footer>
+</html>

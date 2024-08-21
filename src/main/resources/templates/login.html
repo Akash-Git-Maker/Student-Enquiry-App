@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Akash IT - Login</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        .gradient-custom-2 {
+            background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+            color: white;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .right-content {
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .nav-item {
+            text-align: right;
+        }
+
+        .right-content h2, .right-content p {
+            margin: 0 auto;
+            max-width: 80%;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="images/banner (1).jpeg" alt="Brand Logo" width="100" height="100" class="d-inline-block align-top">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Courses</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <!-- Login Form Section -->
+        
+      
+        
+        
+        <div class="col-md-6">
+        <p th:if="${errMsg != null}" class="text-danger"
+					style="font-weight: 600;" th:text="${errMsg}"></p>
+            <p class="text-center">Please login to your account</p>
+
+            <form th:action="@{/login}" th:object="${loginForm}" method="POST">
+                <div class="form-outline mb-4">
+                    <input type="email" id="form2Example11" class="form-control" th:field="*{email}" placeholder=" Email " />
+                  
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="password" id="form2Example22" class="form-control" th:field="*{pwd}" placeholder=" Password" />
+                   
+                </div>
+
+                <div class="text-center pt-1 mb-5">
+                    <input type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                           style="font-size: 16px; font-weight: bold;" value="Log In"/>
+                    <a class="text-muted" href="forgot">Forgot password?</a>
+                </div>
+
+                <div class="text-center">
+                    <p>Don't have an account? <a href="signup">Create New</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Punch Lines Section -->
+        <div class="col-md-6 right-content">
+            <h2>Akash IT is more than just a Software Training Institute</h2>
+            <p>Student Satisfaction is of utmost importance to us</p>
+            <!-- Logo -->
+            <img src="/images/banner2.jpg" alt="Akash IT Logo" class="logo">
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

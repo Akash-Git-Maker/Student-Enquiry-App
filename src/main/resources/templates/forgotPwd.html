@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ashok IT- Forgot Password</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Fallback for old browsers */
+        body {
+            background: #fccb90;
+        }
+        /* Chrome 10-25, Safari 5.1-6 */
+        body {
+            background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+        }
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        body {
+            background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+        }
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            body {
+                background: linear-gradient(to right, #d8363a, #dd3675, #b44593);
+            }
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .gradient-custom-2 {
+            background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+            color: white;
+        }
+        .logo {
+            max-width: 200px;
+            margin: 20px auto;
+        }
+        /* Additional styling */
+        .pink-divider {
+            background-color: pink;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <!-- Logo Section -->
+        <div class="col-md-12 text-center">
+            <img src="\images\banner (1).jpeg" alt="Brand Logo" width="140" height="140" class="d-inline-block align-top">
+        </div>
+    </div>
+    <div class="row">
+        <!-- Forgot Password Form Section -->
+        <div class="col-md-6">
+        
+        <div th:if="${succMsg}" class="alert alert-success" role="alert">
+                <span th:text="${succMsg}"></span>
+            </div>
+            <div th:if="${errMsg}" class="alert alert-danger" role="alert">
+                <span th:text="${errMsg}"></span>
+            </div>
+        
+        <form th:action="@{/forgotPwd}" method="POST">
+        
+            <p class="text-center">Recover Your Password</p>
+            <div class="form-outline mb-3">
+                <input type="email" id="email" class="form-control" name = "email" placeholder="Email">
+            </div>
+            <div class="text-center pt-1 mb-3">
+                <input type="submit" value= "Submit" class="btn btn-primary btn-block fa-lg gradient-custom-2"/>
+            </div>
+            <div class="text-center">
+                <p>Don't have an account? <a href="signup">Create New</a></p>
+            </div>
+                </form>
+        </div>
+        <!-- Punch Lines Section -->
+        <div class="col-md-6">
+            <div class="pink-divider">
+                <h2 style="font-size: 24px;">Akash IT is more than just a Software Training Institute</h2>
+                <p style="font-size: 18px;">Student Satisfaction is at most important for us</p>
+                <!-- Logo -->
+                <img src="\images\banner2.jpg" alt="Akash IT Logo" class="logo">
+            </div>
+        
+        </div>
+    </div>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
